@@ -29,7 +29,7 @@ export const chatwithAI = async (filePath: string) => {
         const resultStream = await completion.sendMessageStream("[Markdown content]:\n\n" + content)
         // const result = await completion.sendMessage("[Markdown content]:\n\n" + content);
         let fullResponse = ""
-        for await (const chunk of (await resultStream.response).text()) {
+        for await (const chunk of resultStream.stream) {
             fullResponse += chunk
         }
         // const responsefromAI = result.response.text();
