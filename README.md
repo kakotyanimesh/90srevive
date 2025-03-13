@@ -2,9 +2,7 @@
 
 This website converts your today's modern website into 90s retro website. That vercel link wont work as vercel won't allow me to write inside my code file except the temp folder , so i have to fix it somehow and ill fix it. but till that day there will be a working video of it. 
 
-<video width="320" height="240" controls>
-  <source src="https://youtu.be/jY8nrKq6010" type="video/mp4">
-</video>
+[![demo video](https://img.youtube.com/vi/jY8nrKq6010/0.jpg)](https://www.youtube.com/watch?v=jY8nrKq6010)
 
 ---
 
