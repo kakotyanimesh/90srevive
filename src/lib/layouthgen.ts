@@ -11,8 +11,8 @@ export const generateLayout = (folderPath : string, title ?:string, description 
         const layoutContent = fs.readFileSync(layouytTamplatefilePath, "utf-8")
 
         const replacedContent = layoutContent
-                                            .replace('{{title}}', title || "default title")
-                                            .replace('{{description}}', description || "default description")
+                                            .replace('{{title}}', title || "default two title")
+                                            .replace('{{description}}', description || "default three description")
 
         
 

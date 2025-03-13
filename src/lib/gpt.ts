@@ -27,13 +27,13 @@ export const chatwithAI = async (filePath: string) => {
 
         // streamline the ai response as vercel only 10s of api calling time 
         const resultStream = await completion.sendMessageStream("[Markdown content]:\n\n" + content)
-        // console.log(resultStream);
+        console.log(resultStream + "stream response ");
         
         // const result = await completion.sendMessage("[Markdown content]:\n\n" + content);
         let fullResponse = ""
-        // @ts-ignore
-        for await (const chunk of resultStream) {
-            // console.log(chunk.text());
+
+        for await (const chunk of resultStream.stream) {
+            console.log(chunk.text() + "text wala ");
             
             fullResponse += chunk.text()
         }
@@ -44,13 +44,17 @@ export const chatwithAI = async (filePath: string) => {
 
         const actualRespone = removeLastAndFirstLine(fullResponse);
 
-        const demoDir = path.join("/tmp", "demo");
+        // const demoDir = path.join("/tmp", "demo");
+        const demoDir = path.join(process.cwd() ,"/tmp", "demo");
 
         if (!fs.existsSync(demoDir)) {
             fs.mkdirSync(demoDir, { recursive: true });
         }
 
         const outpath = path.join(demoDir, "page.tsx");
+        console.log("herer response ");
+        
+        
 
         fs.writeFileSync(outpath, actualRespone!, "utf-8");
 
