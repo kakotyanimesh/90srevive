@@ -1,65 +1,57 @@
-// chat completetion and layout generator 
-import OpenAI from "openai";
-import fs from "fs"
+// chat completion and layout generator using Gemini API
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import fs from "fs";
 import { prompt } from "@/utils/prompt";
 import { removeLastAndFirstLine } from "./helper";
 import path from "path";
 
-const openai = new OpenAI({
-    baseURL : 'https://api.aimlapi.com/v1/chat/completions',
-    apiKey : process.env.AIML_API_KEY,
-    dangerouslyAllowBrowser : true
-})
+const genAI = new GoogleGenerativeAI(process.env.AIML_API_KEY!);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-export const chatwithAI = async (filePath : string) => {
+export const chatwithAI = async (filePath: string) => {
     try {
-        const content = fs.readFileSync(filePath, 'utf-8')
+        const content = fs.readFileSync(filePath, 'utf-8');
 
-
-        const completion = await openai.chat.completions.create({
-            model : "gpt-4o",
-            messages : [
+        const completion = model.startChat({
+            history: [
                 {
-                    role : "system",
-                    content : prompt
+                    role: "user",
+                    parts: [{ text: prompt }], // Corrected: wrap prompt in an object
                 },
                 {
-                    role : "user",
-                    content : "[Markdown content]:\n\n" + content,
+                    role: "model",
+                    parts: [{ text: "[Markdown content]:\n\n" + content }], // Corrected: wrap content in an object
                 },
-            ]
-        })
+            ],
+        });
 
-        // console.log("output paht runnun ");
-
-
-        const responsefromAI = completion.choices[0].message.content
+        const result = await completion.sendMessage("[Markdown content]:\n\n" + content);
+        const responsefromAI = result.response.text();
         console.log(responsefromAI);
-        
-        const actualRespone = removeLastAndFirstLine(responsefromAI)
-        
 
-        const demoDir = path.join(process.cwd(), "src", "app", "demo")
+        const actualRespone = removeLastAndFirstLine(responsefromAI);
 
-        if(!fs.existsSync(demoDir)){
-            fs.mkdirSync(demoDir, {recursive : true})
+        const demoDir = path.join(process.cwd(), "src", "app", "demo");
+
+        if (!fs.existsSync(demoDir)) {
+            fs.mkdirSync(demoDir, { recursive: true });
         }
 
+        const outpath = path.join(demoDir, "page.tsx");
 
-        const outpath = path.join(demoDir, "page.tsx")
-        
-        fs.writeFileSync(outpath, actualRespone!, "utf-8")
-        
-        return path.relative(process.cwd(), outpath)
+        fs.writeFileSync(outpath, actualRespone!, "utf-8");
+
+        return path.relative(process.cwd(), outpath);
     } catch (error) {
-        console.log(`error while calling the ai lol/ `);
-        
-        return "Error while fetching data from AI"   
+        console.error("Error while calling the AI:", error);
+        if (error instanceof Error) {
+            console.error(error.message);
+        }
+        return "Error while fetching data from AI";
     }
-}
-
+};
 
 /**
- * taking makrdown data or json data send it to gpt gets a redsign code of 90s style
- * creates a folder name demo and paste the code in it by visiting that page we can get to see the website 
+ * taking markdown data or json data send it to gemini gets a redesign code of 90s style
+ * creates a folder name demo and paste the code in it by visiting that page we can get to see the website
  */
