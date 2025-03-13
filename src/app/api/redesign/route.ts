@@ -19,13 +19,13 @@ export async function POST(req:Request) {
         if (totalPage === 1) {
             const redesignWebPath = await chatwithAI(filePath)
 
-            // const demoDir = path.join(process.cwd(), "/tmp", "demo") // for local developement
-            const demoDir = path.join("/tmp", 'demo')
+            const demoDir = path.join(process.cwd(), "/tmp", "demo") // for local developement
+            // const demoDir = path.join("/tmp", 'demo') // for vercel if i upload in future
 
             if(!fs.existsSync(demoDir)){
                 fs.mkdirSync(demoDir, {recursive : true})
             }
-            // await generateLayout(demoDir, "my website",  "my website's description")
+            await generateLayout(demoDir, "my website",  "my website's description")
             
         } else {
             // build whole site 

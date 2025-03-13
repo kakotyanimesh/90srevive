@@ -23,8 +23,8 @@ export async function POST(req: Request) {
             throw new Error("error while scrapping data from url")
         }
 
-        // const fileDir = path.join(process.cwd(), "/tmp", "markdownfile") // for local developement
-        const fileDir = path.join("/tmp","markdownfile") // for vercel deployment 
+        const fileDir = path.join(process.cwd(), "/tmp", "markdownfile") // for local developement
+        // const fileDir = path.join("/tmp","markdownfile") // for vercel deployment 
 
         const filePath = path.join(fileDir, 'markdownfile.md')
 
