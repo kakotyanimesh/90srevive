@@ -31,7 +31,7 @@ export const chatwithAI = async (filePath: string) => {
 
         const actualRespone = removeLastAndFirstLine(responsefromAI);
 
-        const demoDir = path.join(process.cwd(), "src", "app", "demo");
+        const demoDir = path.join(process.cwd(), "tmp", "demo");
 
         if (!fs.existsSync(demoDir)) {
             fs.mkdirSync(demoDir, { recursive: true });
