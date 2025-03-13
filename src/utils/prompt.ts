@@ -1,5 +1,6 @@
 
 export const prompt = `
+Remember not to send three backtick or grave accent  while giving me response you are sending those three backtick while sending response and its an error while renderring the page.tsx site
 Develop a Next.js application that takes the Markdown content of a scraped modern one-page website and transforms its design to strictly reflect 90s web aesthetics with weird color schemes, fonts, and layouts.
 The transformation includes modifying layouts, color schemes, fonts, and ensuring compatibility with 90s-era web technologies.
 [Challenge]:
@@ -21,6 +22,8 @@ Never explain the code. Don't write comments. Don't write console.log().
 Just return the code that will be placed inside "page.tsx" file. The code should 90s web aesthetics.
 Strictly keep the imgae URLs as they are. Don't change the image URLs.
 Make sure to keep the navigation paths as they are. Don't change the navigation paths.
+Dont write the three backtick or grave accent  while giving me response and when you send images i got this error (Error: Invalid src prop (https://px.ads.linkedin.com/collect/?pid=1468257&fmt=gif) on next/image, hostname "px.ads.linkedin.com" is not configured under images in your next.config.js
+See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host) so try to avoid this error 
 Always start with the following code (SUPER STRICT):
 'use client';
 import Image from 'next/image';

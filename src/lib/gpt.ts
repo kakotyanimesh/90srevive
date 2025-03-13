@@ -27,7 +27,7 @@ export const chatwithAI = async (filePath: string) => {
 
         const result = await completion.sendMessage("[Markdown content]:\n\n" + content);
         const responsefromAI = result.response.text();
-        console.log(responsefromAI);
+        // console.log(responsefromAI);
 
         const actualRespone = removeLastAndFirstLine(responsefromAI);
 
