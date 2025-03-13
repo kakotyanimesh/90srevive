@@ -3,117 +3,41 @@ import React, { useEffect, useState } from 'react';
 
 export default function Home() {
     return (
-        <div className="bg-gradient-to-r from-lime-500 to-teal-500 text-yellow-50 font-impact">
-            <div className="container mx-auto p-4">
-                <div className="flex justify-center">
-                    <Image src="/images/logo.png" alt="Hackathon Raptors Logo" width={300} height={150} />
-                </div>
-                <h1 className="text-7xl font-bold text-center mb-8">HACKATHON RAPTORS</h1>
-                <div className="text-center">
-                    <Image src="https://cdn.prod.website-files.com/65de32a4db6b43b048630aef/65df5b36cfa3a27948694b79_AdobeStock_321156867.jpeg" alt="Experts" width={500} height={300} />
-                </div>
-                <h2 className="text-4xl font-bold text-center mt-8">We’re a community of experts specializing on:</h2>
-                <ul className="text-2xl list-disc list-inside mt-4">
-                    <li>Impactful Challenges</li>
-                    <li>Proven Fundraising</li>
-                    <li>Efficient Scientific Methods</li>
-                    <li>Top-Tier Software Development</li>
-                    <li>Altruism-centered Events</li>
-                    <li>Respected Collaboration</li>
-                </ul>
-
-                <div className="mt-16">
-                    <h2 className="text-4xl font-bold text-center mb-4">VALUES</h2>
-                    <h3 className="text-3xl font-bold text-center mb-8">Ideate. Program. Revolutionize.</h3>
-                    <a href="https://www.raptors.dev/leadership-principles" className="text-center block text-xl font-bold underline mb-4">Learn More</a>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div>
-                            <h4 className="text-xl font-bold mb-2">Impactful Challenges</h4>
-                            <ul className="list-disc list-inside">
-                                <li>Community involvement</li>
-                                <li>Global impact</li>
-                                <li>Problem-solving focus</li>
-                                <li>Collective intelligence</li>
-                                <li>Tech-driven solutions</li>
-                                <li>Creative synergy</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold mb-2">Proven Fundraising</h4>
-                            <ul className="list-disc list-inside">
-                                <li>Non-profit success</li>
-                                <li>Funding experiments</li>
-                                <li>Donor engagement</li>
-                                <li>Ethical transparency</li>
-                                <li>Resource optimization</li>
-                                <li>Sustaining growth</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold mb-2">Efficient Scientific Methods</h4>
-                            <ul className="list-disc list-inside">
-                                <li>Data-driven analysis</li>
-                                <li>Objective solutions</li>
-                                <li>Evidence-based research</li>
-                                <li>Peer-reviewed techniques</li>
-                                <li>Methodical approach</li>
-                                <li>Scalable results</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold mb-2">Top-Tier Software Development</h4>
-                            <ul className="list-disc list-inside">
-                                <li>Modern development stacks</li>
-                                <li>Dynamic solutions</li>
-                                <li>Quality-driven code</li>
-                                <li>Robust architectures</li>
-                                <li>Elite programmers</li>
-                                <li>User-focused design</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold mb-2">Altruism-Centered Events</h4>
-                            <ul className="list-disc list-inside">
-                                <li>Giving back</li>
-                                <li>Positive change</li>
-                                <li>Empathy in action</li>
-                                <li>Shared humanity</li>
-                                <li>Pro bono work</li>
-                                <li>Empowerment</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-bold mb-2">Respected Collaboration</h4>
-                            <ul className="list-disc list-inside">
-                                <li>Expert alliances</li>
-                                <li>Collaborative growth</li>
-                                <li>Network strength</li>
-                                <li>Mutual respect</li>
-                                <li>Cross-sector partnerships</li>
-                                <li>Visionary outcomes</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                {/* Events Section -  Simplified for brevity */}
-                <div className="mt-16">
-                    <h2 className="text-4xl font-bold text-center mb-8">EVENTS</h2>
-                    {/* Repeat event cards as needed */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <a href="https://www.raptors.dev/project/localdawn----local-first-connect-always">
-                            <div className="bg-purple-700 p-4 rounded-lg">
-                                <h3 className="text-xl font-bold mb-2">LocalDawn</h3>
-                                <p className="text-sm">Local First, Connect Always, Empower Communities</p>
-                            </div>
-                        </a>
-                        {/* Add more event cards here */}
-                    </div>
-                </div>
-
-                {/* ... rest of the content similarly simplified ... */}
+        <div style={{ fontFamily: 'Arial, sans-serif', backgroundColor: '#008080', color: '#FFFFE0' }}>
+            <h1 style={{ textAlign: 'center', fontSize: '3em', color: '#FFD700' }}>Tezpur University</h1>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                <Image src="/ms_img/Stview.png" alt="Standard View" width={50} height={50} style={{ marginRight: '10px' }} />
+                <Image src="/ms_img/red_button.gif" alt="White on Black" width={50} height={50} style={{ marginRight: '10px' }} />
+                <Image src="/ms_img/green_button.gif" alt="Black on White" width={50} height={50} style={{ marginRight: '10px' }} />
+                <Image src="/ms_img/orange_button.gif" alt="White on Blue" width={50} height={50} />
             </div>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                <Image src="/ms_img/font_decrease.gif" alt="Decrease font size" width={30} height={30} style={{ marginRight: '10px' }} />
+                <Image src="/ms_img/font_reset.gif" alt="Reset font size" width={30} height={30} style={{ marginRight: '10px' }} />
+                <Image src="/ms_img/font_increase.gif" alt="Increase font size" width={30} height={30} />
+            </div>
+            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                <a href="https://www.tezu.ernet.in/Screenreader.htm" style={{ textDecoration: 'underline', color: '#FFFACD' }}>Screen Reader</a> | <a href="https://www.tezu.ernet.in/index.html#main_content" style={{ textDecoration: 'underline', color: '#FFFACD' }}>Skip to Main</a>
+            </div>
+            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                <a href="https://www.tezu.ernet.in/academic/admission2025/" style={{ textDecoration: 'underline', color: '#FFFACD' }}><Image src="/images/button_admissions25.png" alt="Admissions" width={150} height={50}/></a>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                <a href="https://www.facebook.com/TezpurUniversity/" style={{ marginRight: '10px' }}><Image src="/images/fb.png" alt="Facebook" width={30} height={30} /></a>
+                <a href="https://twitter.com/TezpurUniv" style={{ marginRight: '10px' }}><Image src="/images/tt.png" alt="Twitter" width={30} height={30} /></a>
+                <a href="https://www.youtube.com/c/TezpurUniversity94" style={{ marginRight: '10px' }}><Image src="/images/yt.png" alt="YouTube" width={30} height={30} /></a>
+                <a href="https://www.linkedin.com/school/tezpur-university/" style={{ marginRight: '10px' }}><Image src="/images/lkdn.png" alt="LinkedIn" width={30} height={30} /></a>
+                <a href="https://www.instagram.com/tezpur.uni/"><Image src="/images/insta.png" alt="Instagram" width={30} height={30} /></a>
+            </div>
+            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                <a href="https://www.tezu.ernet.in/PwD/pwd.htm" style={{ textDecoration: 'underline', color: '#FFFACD', marginRight: '10px' }}>PwD Info</a>
+                <a href="https://www.tezu.ernet.in/contact/keyfunctionaries.html" style={{ textDecoration: 'underline', color: '#FFFACD', marginRight: '10px' }}>Contacts</a>
+                <a href="http://www.tezu.ernet.in/alumniportal.html" style={{ textDecoration: 'underline', color: '#FFFACD', marginRight: '10px' }}>Alumni</a>
+                <a href="https://www.tezu.ernet.in/intranet/" style={{ textDecoration: 'underline', color: '#FFFACD', marginRight: '10px' }}>Intranet</a>
+                <a href="http://webmail.tezu.ernet.in/" style={{ textDecoration: 'underline', color: '#FFFACD', marginRight: '10px' }}>Webmail</a>
+                <a href="https://www.tezu.ernet.in/indexh.html" style={{ textDecoration: 'underline', color: '#FFFACD' }}>हिंदी संस्करण</a>
+            </div>
+            {/* ...rest of the content following a similar pattern... */}
         </div>
     );
 }
