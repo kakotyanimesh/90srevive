@@ -18,7 +18,7 @@ export async function POST(req:Request) {
         if (totalPage === 1) {
             const redesignWebPath = await chatwithAI(filePath)
 
-            const demoDir = path.join(process.cwd(), "tmp", 'demo')
+            const demoDir = path.join("tmp", 'demo')
 
             if(!fs.existsSync(demoDir)){
                 fs.mkdirSync(demoDir, {recursive : true})
@@ -26,7 +26,7 @@ export async function POST(req:Request) {
             await generateLayout(demoDir, "my website",  "my website's description")
         } else {
             // build whole site 
-            // const buildResponse = await BuildMultiPage(filePath, baseURL)
+            const buildResponse = await BuildMultiPage(filePath, baseURL)
 
         }
         return NextResponse.json({

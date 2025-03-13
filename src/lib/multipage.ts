@@ -22,7 +22,7 @@ export const BuildMultiPage = async (jsonFilePath : string, baseURL : string) =>
     // console.log(jsonData.data);
     
 
-    const demoDir = path.join(process.cwd(), "tmp" ,"demo")
+    const demoDir = path.join("tmp" ,"demo")
 
     if(!fs.existsSync(demoDir)){
         fs.mkdirSync(demoDir, {recursive : true})

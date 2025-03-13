@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
         console.log(crawlResponse);
         
-        const fileDir = path.join(process.cwd(), "tmp","jsonfiles")
+        const fileDir = path.join("tmp","jsonfiles")
 
         if(!fs.existsSync(fileDir)){
             fs.mkdirSync(fileDir, {recursive : true})
