@@ -27,10 +27,14 @@ export const chatwithAI = async (filePath: string) => {
 
         // streamline the ai response as vercel only 10s of api calling time 
         const resultStream = await completion.sendMessageStream("[Markdown content]:\n\n" + content)
+        // console.log(resultStream);
+        
         // const result = await completion.sendMessage("[Markdown content]:\n\n" + content);
         let fullResponse = ""
         // @ts-ignore
         for await (const chunk of resultStream) {
+            // console.log(chunk.text());
+            
             fullResponse += chunk.text()
         }
         // const responsefromAI = result.response.text();

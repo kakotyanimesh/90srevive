@@ -39,7 +39,7 @@ export const BuildMultiPage = async (jsonFilePath : string, baseURL : string) =>
     const pageDescription = mainPageData.metadata.description || "default description"
 
     // layout.tsx generation 
-    await generateLayout(demoDir, pageTitle, pageDescription)
+    // await generateLayout(demoDir, pageTitle, pageDescription)
 
     const rootPageContent = await chatwithAI(mainPageData.markdown)
     const actualRespone = removeLastAndFirstLine(rootPageContent)
@@ -71,7 +71,7 @@ export const BuildMultiPage = async (jsonFilePath : string, baseURL : string) =>
 
         for (const [folderName, data] of Object.entries(folderMap)) {
             const folderPath = ensureFolderStructure(folderName)
-            await  generateLayout(folderPath, data.title, data.description)
+            // await  generateLayout(folderPath, data.title, data.description)
             const combinedMarkdown = data.markdown.join('\n\n')
             const pageContent = await chatwithAI(combinedMarkdown)
             pageGenerator(folderPath, pageContent)
