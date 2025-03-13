@@ -25,8 +25,7 @@ export async function POST(req: Request) {
 
         const fileDir = path.join(process.cwd(), "markdownfile")
 
-        const fileName = `markdown_${Date.now()}.md`
-        const filePath = path.join(fileDir, fileName)
+        const filePath = path.join(fileDir, 'markdownfile.md')
 
         if(!fs.existsSync(fileDir)){
             fs.mkdirSync(fileDir, {recursive : true})

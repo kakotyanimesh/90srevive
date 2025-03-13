@@ -37,8 +37,7 @@ export async function POST(req: Request) {
             fs.mkdirSync(fileDir, {recursive : true})
         }
 
-        const fileName = `jsonfile_${Date.now()}.json`
-        const filePath = path.join(fileDir, fileName)
+        const filePath = path.join(fileDir, 'jsonfile.json')
 
 
         fs.writeFileSync(filePath, JSON.stringify(crawlResponse, null, 2), 'utf-8')
