@@ -25,7 +25,7 @@ export async function POST(req:Request) {
             if(!fs.existsSync(demoDir)){
                 fs.mkdirSync(demoDir, {recursive : true})
             }
-            await generateLayout(demoDir, "my website",  "my website's description")
+            // await generateLayout(demoDir, "my website",  "my website's description")
             
         } else {
             // build whole site 
