@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "mkdir -p tmp/demo",
     "dev": "next dev",
-    "prebuild": "mkdir -p tmp/demo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
