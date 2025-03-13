@@ -1,0 +1,15 @@
+import React from "react";
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div>
+      <head>
+        <title>{{title}}</title>
+        <meta name="description" content="{{description}}" />
+      </head>
+      <body>
+        {children}
+      </body>
+    </div>
+  );
+}

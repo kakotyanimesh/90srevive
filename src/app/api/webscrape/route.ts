@@ -15,9 +15,9 @@ import path from "path";
 export async function POST(req: Request) {
     const { url } = await req.json()
     try {
-        const crawwlingApp = new FirecrawlApp({apiKey : process.env.FIRECRAWL_API_KEY})
+        const scrappingApp = new FirecrawlApp({apiKey : process.env.FIRECRAWL_API_KEY})
 
-        const scrapeData = await crawwlingApp.scrapeUrl(url, {formats : ['markdown']}) as ScrapeResponse
+        const scrapeData = await scrappingApp.scrapeUrl(url, {formats : ['markdown']}) as ScrapeResponse
 
         if(!scrapeData.success){
             throw new Error("error while scrapping data from url")
