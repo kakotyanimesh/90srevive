@@ -18,7 +18,7 @@ export async function POST(req:Request) {
         if (totalPage === 1) {
             const redesignWebPath = await chatwithAI(filePath)
 
-            const demoDir = path.join("tmp", 'demo')
+            const demoDir = path.join("/tmp", 'demo')
 
             if(!fs.existsSync(demoDir)){
                 fs.mkdirSync(demoDir, {recursive : true})

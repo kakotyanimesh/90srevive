@@ -30,8 +30,8 @@ export async function POST(req: Request) {
         }
 
         console.log(crawlResponse);
-        
-        const fileDir = path.join("tmp","jsonfiles")
+        // have to use /tmp => vercel only allows inside tmp file write and with / is absolute path
+        const fileDir = path.join("/tmp","jsonfiles")
 
         if(!fs.existsSync(fileDir)){
             fs.mkdirSync(fileDir, {recursive : true})
