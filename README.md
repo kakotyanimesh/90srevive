@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎸 90s Revive – Reliving the Golden Era  
 
-## Getting Started
+This website converts your today's modern website into 90s retro website. That vercel link wont work as vercel won't allow me to write inside my code file except the temp folder , so i have to fix it somehow and ill fix it. but till that day there will be a working video of it. 
 
-First, run the development server:
+<video width="320" height="240" controls>
+  <source src="https://youtu.be/jY8nrKq6010" type="video/mp4">
+</video>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🕹️ Features  
+
+- 🎨 **Retro UI** – convert modern looking websites to 90s style website
+
+## 📦 Getting Started  
+
+1️⃣ **Clone the repository:**
+ ```bash
+git clone https://github.com/kakotyanimesh/90s-revive.git
+cd 90s-revive
 ```
+2️⃣ **Open the project in a browser:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Bash
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+bun run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+🛠 **Usage**
 
-## Learn More
+-   I don't think there will be any usages of it I just built it because i want to play with ai 
 
-To learn more about Next.js, take a look at the following resources:
+💾 **Technologies Used**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-  	Next.js
+-   TypeScript
+-   React
+-  Gemini API
+- Firecrawl API 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+📜 **License**
 
-## Deploy on Vercel
+This project is licensed under the MIT License – see the `LICENSE` file for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+👤 **Author**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Developed by Animesh Kakoty 🚀
+
+Keeping the 90s web alive, one GIF at a time.
