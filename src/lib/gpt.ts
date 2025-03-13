@@ -25,11 +25,19 @@ export const chatwithAI = async (filePath: string) => {
             ],
         });
 
-        const result = await completion.sendMessage("[Markdown content]:\n\n" + content);
-        const responsefromAI = result.response.text();
+        // streamline the ai response as vercel only 10s of api calling time 
+        const resultStream = await completion.sendMessageStream("[Markdown content]:\n\n" + content)
+        // const result = await completion.sendMessage("[Markdown content]:\n\n" + content);
+        let fullResponse = ""
+        for await (const chunk of (await resultStream.response).text()) {
+            fullResponse += chunk
+        }
+        // const responsefromAI = result.response.text();
         // console.log(responsefromAI);
 
-        const actualRespone = removeLastAndFirstLine(responsefromAI);
+
+
+        const actualRespone = removeLastAndFirstLine(fullResponse);
 
         const demoDir = path.join("/tmp", "demo");
 
